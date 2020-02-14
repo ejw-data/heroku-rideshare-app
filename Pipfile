@@ -17,7 +17,6 @@ geopip = "*"
 sklearn = "*"
 joblib = "*"
 pandas = "*"
-os = "*"
 datetime = "*"
 
 [requires]
