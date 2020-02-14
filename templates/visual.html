@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rideshare Predictions</title>
+
+  <style>
+    @import url(style.css);
+
+    #circle circle {
+      fill: none;
+      pointer-events: all;
+    }
+
+    .group path {
+      fill-opacity: .8;
+    }
+
+    path.chord {
+      stroke-width: .40px;
+    }
+
+    #circle:hover path.fade {
+      display: none;
+    }
+  </style>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>  
+  <link rel="stylesheet" href="../static/css/chord.css">
+  
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1 class="detail"> 2019 <span class="city">Chicago </span><span class="rider">RideShare</span> Provider Data
+        </h1>
+        <aside>
+          <ol>
+            <li> <span style="color:#9ACD32">Rogers Park</span></span></li>
+            <li> <span style="color:#377DB8">West Ridge</span> </li>
+            <li> <span style="color:#F5DEB3">Uptown</span></li>
+            <li> <span style="color:#EE82EE">Lincoln Square</span></li>
+            <li> <span style="color:#40E0D0">North Center</span></li>
+            <li> <span style="color:#FF6347">Lake View</span></li>
+            <li> <span style="color:#D8BFD8">Lincoln Park</span></li>
+            <li> <span style="color:#2E6D41">Near North Side</span></li>
+            <li> <span style="color:#708090">Edison Park</span></li>
+            <li> <span style="color:#87CEEB">Norwood Park</span></li>
+            <li> <span style="color:#A0522D">Jefferson Park</span></li>
+            <li> <span style="color:#6A5ACD">Forest Glen</span></li>
+            <li> <span style="color:#2E8B57">North Park</span></li>
+            <li> <span style="color:#F4A460">Albany Park</span></li>
+            <li> <span style="color:#245FAF">Portage Park</span></li>
+            <li> <span style="color:#FA8072">Irving Park</span></li>
+            <li> <span style="color:#9ACD32">Dunning</span></li>
+            <li> <span style="color:#377DB8">Montclare</span></li>
+            <li> <span style="color:#F5DEB3">Belmont Cragin</span></li>
+            <li> <span style="color:#EE82EE">Hermosa</span></li>
+            <li> <span style="color:#40E0D0">Avondale</span></li>
+            <li> <span style="color:#FF6347">Logan Square</span></li>
+            <li> <span style="color:#D8BFD8">Humboldt Park</span></li>
+            <li> <span style="color:#6A5ACD">West Town</span></li>
+            <li> <span style="color:#708090">Austin</span></li>
+            <li> <span style="color:#87CEEB">West Garfield Park</span></li>
+            <li> <span style="color:#A0522D">East Garfield Park</span></li>
+            <li> <span style="color:#9ACD32">Near West Side</span></li>
+            <li> <span style="color:#2E8B57">North Lawndale</span></li>
+            <li> <span style="color:#245FAF">South Lawndale</span></li>
+            <li> <span style="color:#FA8072">Lower West Side</span></li>
+            <li> <span style="color:#F4A460">Loop</span></li>
+            <li> <span style="color:#2E8B57">Near South Side</span></li>
+            <li> <span style="color:#A0522D">Armour Square</span></li>
+            <li> <span style="color:#6A5ACD">Douglas</span></li>
+            <li> <span style="color:#708090">Oakland</span></li>
+            <li> <span style="color:#40E0D0">Fuller Park</span></li>
+            <li> <span style="color:#4682B4">Grand Boulevard</span></li>
+            <li> <span style="color:#EE82EE">Kenwood</span></li>
+            <li> <span style="color:#9ACD32">Washington Park</span></li>
+            <li> <span style="color:#D2B48C">Hyde Park</span></li>
+            <li> <span style="color:#D8BFD8">Woodlawn</span></li>
+            <li> <span style="color:#708090">South Shore</span></li>
+            <li> <span style="color:#00FF7F">Chatham</span></li>
+            <li> <span style="color:#D8BFD8">Avalon Park</span></li>
+            <li> <span style="color:#A4CAFA">South Chicago</span></li>
+            <li> <span style="color:#D2B48C">Burnside</span></li>
+            <li> <span style="color:#EE82EE">Calumet Heights</span></li>
+            <li> <span style="color:#87CEEB">Roseland</span></li>
+            <li> <span style="color:#377DB8">Pullman</span></li>
+            <li> <span style="color:#9ACD32">South Deering</span></li>
+            <li> <span style="color:#40E0D0">East Side</span></li>
+            <li> <span style="color:#D8BFD8">West Pullman</span></li>
+            <li> <span style="color:#6A5ACD">Riverdale</span></li>
+            <li> <span style="color:#40E0D0">Hegewisch</span></li>
+            <li> <span style="color:#A0522D">Garfield Ridge</span></li>
+            <li> <span style="color:#377DB8">Archer Heights</span></li>
+            <li> <span style="color:#A0522D">Brighton Park</span></li>
+            <li> <span style="color:#9ACD32">Mckinley Park</span></li>
+            <li> <span style="color:#377DB8">Bridgeport</span></li>
+            <li> <span style="color:#F5DEB3">New City</span></li>
+            <li> <span style="color:#EE82EE">West Elsdon</span></li>
+            <li> <span style="color:#40E0D0">Gage Park</span></li>
+            <li> <span style="color:#A9CAFA">Clearing</span></li>
+            <li> <span style="color:#D8BFD8">West Lawn</span></li>
+            <li> <span style="color:#D2B48C">Chicago Lawn</span></li>
+            <li> <span style="color:#4682B4">West Englewood</span></li>
+            <li> <span style="color:#00FF7F">Englewood</span></li>
+            <li> <span style="color:#A0522D">Greater Grand Cross.</span></li>
+            <li> <span style="color:#40E0D0">Ashburn</span></li>
+            <li> <span style="color:#708090">Auburn Gresham</span></li>
+            <li> <span style="color:#87CEEB">Beverly</span></li>
+            <li> <span style="color:#A0522D">Washington Heights</span></li>
+            <li> <span style="color:#FA8072">Mount Greenwood</span></li>
+            <li> <span style="color:#2E8B57">Morgan Park</span></li>
+            <li> <span style="color:#F4A460">O'hare</span></li>
+            <li> <span style="color:#FA8072">Edgewater</span></li>
+      </div>
+      </ol>
+      </aside>
+      <p>Mouseover to hone in on rides to and from <a
+          href="https://chicago.maps.arcgis.com/apps/webappviewer/index.html?id=d56603be39824be099557dcdf9d7f7b9"><span
+            class="city">Chicago's </span>77 community areas.</a></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12  col-md-9">
+      <div id="viz">
+        <!-- We append our chord here. -->
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script src="https://d3js.org/d3.v2.min.js?2.8.1"></script>
+  <script type="text/javascript" src="../static/js/master.js"></script>
+
+  <footer>
+    <p>Disclaimer: The data subset used to create this awe-inspiring visualization excludes<br>
+      (i) trips pooled (ii) shared trips authorized and (iii) rides which originate or<br>
+      terminate outside of Chicago in 2019 ("Adjusted Dataset"). This Chord diagram<br>
+      consists of 1.2 million rides in total that were randomly selected from each<br>
+      month of the Adjusted Dataset (approx. 77 million rides). We are confident it<br>
+      accuratley reflects the Adjusted Dataset.
+      <p>*Number of rides extrapolated from the Adjusted Dataset.</p>
+      <p>Citation for chord diagram: <a href="http://bost.ocks.org/mike/uberdata/">Mike Bostock's Uber Rides by
+          Neighborhood</a></p>
+      <p>Data Source: <a
+          href="https://data.cityofchicago.org/Transportation/Transportation-Network-Providers-Trips/m6dm-c72p/data">City
+          of Chicago: Transportation Network Providers - Trips</a></p>
+    </p>
+  </footer>
+</body>
+
+</html>

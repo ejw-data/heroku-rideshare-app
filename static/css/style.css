@@ -1,0 +1,163 @@
+/* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */
+html, body, #map {
+  position: relative;
+  min-height: 100%;
+  padding:0;
+  margin:0;
+}
+
+body {
+ /* Padding bottom by footer height */
+ padding-bottom: 20px;
+ background-color:white;
+
+}
+
+h1, h2, h3 {
+  font-family: Georgia, serif;
+  color: #E9141D;
+  font-weight:700;
+}
+
+h4 { 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(22, 88, 66);
+ 
+}
+
+p {
+  line-height:2em;
+  font-size: large;
+}
+
+.col-md-12, .col-md-8, .col-md-4 {
+  margin-top: 4em;
+  padding: 0 2em 0 2em;
+}
+.row {
+  margin-bottom:3em;
+}
+
+.title {
+  display: block;
+  color: #E9141D;
+  font-weight:700;
+  font-size: 1.25em;
+  text-align:center;
+}
+
+.theme-showcase {
+  margin-top: 5em;
+}
+
+
+
+
+.iframeContainer {
+  padding: 20px;
+  border: 1px solid #e3e3e3;
+}
+
+#scatter {
+background-size: auto;
+}
+
+
+
+.scatter-text{
+  font-size: 20px;
+}
+
+/*https://search.creativecommons.org/photos/d4fef16c-8059-40f2-a932-dd9c67d025e5 */
+.header-bg{
+  background-image: url("../images/uscapitol.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 350px;
+  margin-top:0px;
+}
+
+.header-title{
+  padding-top: 50px;
+}
+
+.row-min{
+  margin-bottom:0!important;
+}
+
+.col-min{
+  margin-top:1em;
+  margin-bottom:3em;
+}
+
+.col-map, .col-line{
+  min-height: 400px;
+  max-width:100%;
+}
+
+#map, #map2, #map3, #linechart{
+  height:100%;
+}
+
+
+/* Line Chart CSS */
+button {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.browser text {
+  text-anchor: left;
+}
+
+#map, #map2, #map3, #scatter, #linechart{
+  height:100%;
+}
+
+#countdown{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+font-weight: bold;
+}
+
+h3 {font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+
+}
+
+.white-text {
+  color: white!important;
+}
+
+.header-bg{
+  background-image: url("../images/toy-car-uber-lyft_edit.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 350px;
+  margin-top:0px;
+  margin-bottom:0px;
+  
+}
+
+.title{
+  position:absolute;
+  right:20px;
+  bottom: 20px;
+  font-size: 4em;
+  background: gainsboro;
+  padding: 5px;
+}
+
+.l-pad{
+  padding-left:  30px;
+}
+
+.container{
+  background-color: whitesmoke;
+}

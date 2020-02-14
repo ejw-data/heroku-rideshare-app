@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Rideshare Predictions</title>
+
+  <!-- Bootstrap and general website structure -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js" integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q==" crossorigin=""></script>
+  <link rel="stylesheet" href="../static/css/style.css">
+  
+  <!-- MapQuest -->
+  <script src="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://api.mqcdn.com/sdk/mapquest-js/v1.3.2/mapquest.css"/>
+
+  <script type="text/javascript">
+    var start_location = '{{ start_location }}';
+    var end_location = '{{ end_location }}';
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="row header-bg">
+      <div class="col-xs-12 col-md-12 col-lg-12">   
+        <h2 class='title' style="color: #E9141D"><strong>Rideshare Fare Estimator</strong></h2>
+      </div>
+    </div>
+    <div class="row row-min">
+      <div class="col-xs-12 col-md-12 col-lg-12">   
+        <h2 style= "color: #00AEF3">Compare your favorite rideshares</h2 ><p>Select a start and endpoint below and see how this algorithm compares to your favorite rideshare service</strong></p>
+          <ul>
+            <li><a href="https://www.uber.com/">Uber</a></li>
+            <li><a href="https://www.lyft.com/">Lyft</a></li>
+            <li><a href="https://gocurb.com/">Curb</a></li>
+            <li><a href="https://ridewithvia.com/">Via</a></li>
+          </ul>
+      </div>
+    </div>
+  
+    <div class="row row-min">
+      <div class="col-xs-6 col-md-6 col-lg-6 l-pad">   
+        {% if message %}
+          <p class = "message">{{ message | safe }}</p>
+        {% endif %}
+        <form action="/submit" method="POST">
+          <div class="form-group">
+            <h3>Start Location</h3>
+            <input
+              type='text'
+              name='startLoc'
+              placeholder="Starting Address"
+              size=50
+              
+            />
+          </div>
+          <div class="form-group">
+            <h3>End Location</h3>
+            <input
+              type='text'
+              name='endLoc'
+              placeholder="Final Address"
+              size=50
+            />
+          </div>
+          <!-- <div class="form-group">
+            <h3>Pick-up Time</h3>
+            <input
+              type='text'
+              name='time0'
+              placeholder="Pick-up Time"
+              size=25
+            />
+          </div> -->
+          <input type='submit' value="Submit" class="btn btn-primary" />
+
+        </form>
+        {% if estimator %}
+        <p class = "estimator">The ride fare is estimated to be ${{ estimator | safe }}</p>
+        {% endif %}
+      </div>
+      <div class="col-xs-6 col-md-6 col-lg-6 l-pad"> 
+        <div id = 'map' style="width: 100%;"></div>
+      </div>
+    </div>
+    <div class ="row">
+      <div class="col-xs-12 col-md-12 col-lg-12">   
+        <a href="/visual" class="btn btn-primary btn-lg" role="button" aria-disabled="true">View Chicago Ride Visualizations</a>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <!-- MapQuest JS -->
+  <script type="text/javascript" src="../static/js/logic.js"></script> 
+ 
+</body>
+
+</html>

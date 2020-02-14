@@ -1,0 +1,158 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Serif|PT+Serif:b|PT+Serif:i|PT+Sans|PT+Sans:b);
+
+html {
+    min-width: 1040px;
+    }
+
+    body {
+    background:  rgb(227, 245, 250);
+    color: #333;
+    margin: 1em auto 4em auto;
+    position: relative;
+    width: 960px;
+    }
+     
+    header,
+    h1,
+    h2,
+    h3,
+    h4 {
+    color: #000;
+    font-weight: bolder;
+    font-family: "PT Sans", sans-serif;
+    }
+    
+    footer {color: black;
+        font-weight: bolder;
+        font-family: "PT Sans", sans-serif;
+        font-size: x-small;
+
+    }
+
+    a {
+    color: rgb(219, 14, 238);
+    font-weight: bold;
+    font-family: "PT Sans", sans-serif;
+     }
+
+    aside,p {
+    color: black;
+    font-weight: bold;
+    font-family: "PT Sans", sans-serif;
+    }
+    h1.detail { color: black }
+    span.city{ color: rgb(14, 174, 238)}
+    span.rider {color: rgb(219, 14, 238) }
+
+
+    h1 {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin: .3em 0 .1em 0;
+    }
+     
+    h2 {
+    margin-top: 2em;
+    }
+     
+    h1, h2 {
+    text-rendering: optimizeLegibility;
+    }
+     
+    h2  {
+    color: #ccc;
+    left: -20px;
+    position: absolute;
+    width: 740px;
+    }
+     
+    footer {
+    font-size: small;
+    margin-top: 8em;
+    }
+     
+    header aside {
+    margin-top: 88px;
+    }
+     
+    header aside,
+    footer aside {
+    color: #636363;
+    text-align: right;
+    }
+     
+    aside {
+    font-size: medium;
+    display: block;
+    right: 0;
+    position: absolute;
+    width: 180px;
+    }
+     
+    .attribution {
+    font-size: small;
+    margin-bottom: 2em;
+    }
+     
+     
+    a:not(:hover) {
+    text-decoration: none;
+    }
+     
+    pre, code, textarea {
+    font-family: "Menlo", monospace;
+    }
+     
+    code {
+    line-height: 1em;
+    }
+     
+    textarea {
+    font-size: 100%;
+    }
+     
+    body > pre {
+    border-left: solid 2px #ccc;
+    padding-left: 18px;
+    margin: 2em 0 2em -20px;
+    }
+     
+    .html .value,
+    .javascript .string,
+    .javascript .regexp {
+    color: #756bb1;
+    }
+    
+    svg {
+    font: 11px "PT Sans", sans-serif;
+    font-weight: 800;
+    }
+     
+    .axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+    }
+     
+    sup, sub {
+    line-height: 0;
+    }
+     
+    q:before {
+    content: "â€œ";
+    }
+     
+    q:after {
+    content: "â€";
+    }
+     
+    blockquote:before {
+    position: absolute;
+    left: 2em;
+    }
+     
+    blockquote:after {
+    position: absolute;
+    }
+
