@@ -1,0 +1,25 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+flask = "*"
+flask-sqlalchemy = "*"
+gunicorn = "*"
+numpy = "*"
+openweathermapy = "*"
+requests = "*"
+geopip = "*"
+pickle = "*"
+sklearn = "*"
+joblib = "*"
+pandas = "*"
+os = "*"
+datetime = "*"
+
+[requires]
+python_version = "3.7"
