@@ -20,6 +20,6 @@ def prediction_model(input_values):
     scaled_predict = model.predict(inputs_scaled)
 
     # format output - one item in a list
-    fare = round(scaled_predict[0],2)
+    fare = round(scaled_predict[0],2) + 2.90
 
     return fare
