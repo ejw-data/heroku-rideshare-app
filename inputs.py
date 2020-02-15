@@ -129,11 +129,11 @@ def ride_share_calcs(start, stop, t):
 
     # List of Coded Start Community
     #start_geo = int(geopip.search(start_longitude, start_latitude)['area_num_1'])
-    coded_start_community = 0   #coded_community(start_geo)
+    #coded_start_community = coded_community(start_geo)
 
     # List of Coded End Community
     #end_geo = int(geopip.search(end_longitude, end_latitude)['area_num_1'])
-    coded_end_community = 0  # coded_community(end_geo)
+    #coded_end_community = coded_community(end_geo)
 
     # Retrieve Weather Data
     settings = {"units": "imperial", "appid": ow_api_key}
@@ -183,7 +183,7 @@ def ride_share_calcs(start, stop, t):
     # Variables Translated:  duration, distance, rain, start_geo[75], end_geo[75], actual_temp, coded_date[10], start_geo[55], end_geo[55], snow
     #ML_input_original = [duration, distance, start_geo, end_geo, start_longitude, start_latitude, end_longitude, end_latitude] + coded_week + coded_date + coded_start_community + coded_end_community + weather
 
-    ML_input_values = [duration, distance, rain, coded_start_community[75], coded_end_community[75], actual_temp, coded_dates[10], coded_start_community[55], coded_end_community[55], snow]
-
+    #ML_input_values = [duration, distance, rain, coded_start_community[75], coded_end_community[75], actual_temp, coded_dates[10], coded_start_community[55], coded_end_community[55], snow]
+    ML_input_values = [duration, distance, rain, 0, 0, actual_temp, coded_dates[10], 0, 0, snow]
     ML_input = prediction_model(ML_input_values)
     return ML_input
