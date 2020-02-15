@@ -2,7 +2,7 @@ def ride_share_calcs(start, stop, t):
     import openweathermapy.core as owm
     import requests
     import geopip
-    import os
+    #import os
     import datetime as dt
     from model import prediction_model
 
@@ -13,7 +13,7 @@ def ride_share_calcs(start, stop, t):
     from config import mq_api_key
 
     # Set geopip to look at geojson file
-    os.environ['REVERSE_GEOCODE_DATA'] = 'Resources/Data/community_areas.geojson'
+    #os.environ['REVERSE_GEOCODE_DATA'] = 'Resources/Data/community_areas.geojson'
 
     # Form Inputs
     start_address = start     #'405 N Wabash Avenue, Chicago, IL'
