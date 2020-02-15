@@ -128,12 +128,12 @@ def ride_share_calcs(start, stop, t):
         return coded_location
 
     # List of Coded Start Community
-    start_geo = int(geopip.search(start_longitude, start_latitude)['area_num_1'])
-    coded_start_community = coded_community(start_geo)
+    #start_geo = int(geopip.search(start_longitude, start_latitude)['area_num_1'])
+    coded_start_community = 0   #coded_community(start_geo)
 
     # List of Coded End Community
-    end_geo = int(geopip.search(end_longitude, end_latitude)['area_num_1'])
-    coded_end_community = coded_community(end_geo)
+    #end_geo = int(geopip.search(end_longitude, end_latitude)['area_num_1'])
+    coded_end_community = 0  # coded_community(end_geo)
 
     # Retrieve Weather Data
     settings = {"units": "imperial", "appid": ow_api_key}
