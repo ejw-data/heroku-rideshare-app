@@ -1,10 +1,11 @@
-def ride_share_calcs(start, stop, t):
+def ride_share_calcs(start, stop):
     import openweathermapy.core as owm
     import requests
     import geopip
     #import os
     import datetime as dt
     from model import prediction_model
+    from taxes import tax_model
 
     # Weather API
     from config import ow_api_key
@@ -18,14 +19,9 @@ def ride_share_calcs(start, stop, t):
     # Form Inputs
     start_address = start     #'405 N Wabash Avenue, Chicago, IL'
     end_address = stop        #'938 W Webster Ave, Chicago, IL 60614'
-    time = '2019-12-11 00:00:00'
+
     # make default app time the current time
-
-    # format time to default
-
-    time = t
     noncoded_time = dt.datetime.today()
-    # if error then use 'dt.datetime.today()'
 
     def coded_week(date_input):
         weekdays = 7     
@@ -185,5 +181,22 @@ def ride_share_calcs(start, stop, t):
 
     #ML_input_values = [duration, distance, rain, coded_start_community[75], coded_end_community[75], actual_temp, coded_dates[10], coded_start_community[55], coded_end_community[55], snow]
     ML_input_values = [duration, distance, rain, 0, 0, actual_temp, coded_dates[10], 0, 0, snow]
-    ML_input = prediction_model(ML_input_values)
-    return ML_input
+ 
+    # Base fare
+    base_fare = prediction_model(ML_input_values)
+
+    # City-wide Tax Surcharge
+    base_surcharge = 1.25
+
+    # Additional Tax Surcharges
+    start_fare = tax_model(start_longitude, start_latitude)
+    end_fare = tax_model(end_longitude, end_latitude)
+
+    if start_fare >= end_fare:
+        special_surcharge = start_fare
+    else:
+        special_surcharge = end_fare
+
+    total_fare = [base_fare, base_surcharge, special_surcharge]
+    
+    return total_fare

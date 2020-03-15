@@ -85,8 +85,11 @@
           <input type='submit' value="Submit" class="btn btn-primary" />
 
         </form>
-        {% if estimator %}
-        <p class = "estimator">The ride fare is estimated to be ${{ estimator | safe }}</p>
+        {% if base_fare %}
+        <p class = "estimator">Ride Share Base Estimate: ${{ base_fare | safe }}</p>
+        <p class = "estimator">Ride Share Base Surcharge: ${{ base_surcharge | safe }}</p>
+        <p class = "estimator">Ride Share Special Surcharge: ${{ special_surcharge | safe }}</p>
+        <p class = "estimator">Ride Share Total Cost: ${{ total_cost | safe }}</p>
         {% endif %}
       </div>
       <div class="col-xs-6 col-md-6 col-lg-6 l-pad"> 

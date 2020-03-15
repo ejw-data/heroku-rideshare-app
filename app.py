@@ -24,7 +24,12 @@ def submit_fare():
         if start_location == '' or end_location == '':
             return render_template('index.html', message='Please complete all sections of the form', start_location=start_location, end_location=end_location)
         elif start_location != '' and end_location != '':
-            fare_estimate = ride_share_calcs(start_location, end_location, '2019-12-11 00:00:00')
+            fare_estimate = ride_share_calcs(start_location, end_location)
+            base_fare = fare_estimate[0]
+            base_surcharge = fare_estimate[1]
+            special_surcharge = fare_estimate[2]
+            total_cost = base_fare + base_surcharge + special_surcharge
+            return render_template('index.html', total_cost=total_cost, base_fare=base_fare, base_surcharge=base_surcharge, special_surcharge=special_surcharge, start_location=start_location, end_location=end_location)
             return render_template('index.html', estimator=fare_estimate, start_location=start_location, end_location=end_location)
         else:
             return render_template('index.html', estimator='', start_location=start_location, end_location=end_location)
