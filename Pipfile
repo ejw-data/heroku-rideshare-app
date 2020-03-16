@@ -13,7 +13,7 @@ gunicorn = "*"
 numpy = "*"
 openweathermapy = "*"
 requests = "*"
-geopip = {git = "https://github.com/ejw-data/reverse_geocode.git", editable = true, ref = "v1.0"}
+geopip = {git = "https://github.com/ejw-data/reverse_geocode/geopip.git", editable = true, ref = "1.0"}
 sklearn = "*"
 joblib = "*"
 pandas = "*"
