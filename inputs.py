@@ -179,7 +179,7 @@ def ride_share_calcs(start, stop):
     # Variables Translated:  duration, distance, rain, start_geo[75], end_geo[75], actual_temp, coded_date[10], start_geo[55], end_geo[55], snow
     #ML_input_original = [duration, distance, start_geo, end_geo, start_longitude, start_latitude, end_longitude, end_latitude] + coded_week + coded_date + coded_start_community + coded_end_community + weather
 
-    #ML_input_values = [duration, distance, rain, coded_start_community[75], coded_end_community[75], actual_temp, coded_dates[10], coded_start_community[55], coded_end_community[55], snow]
+    # ML_input_values = [duration, distance, rain, coded_start_community[75], coded_end_community[75], actual_temp, coded_dates[10], coded_start_community[55], coded_end_community[55], snow]
     ML_input_values = [duration, distance, rain, 0, 0, actual_temp, coded_dates[10], 0, 0, snow]
  
     # Base fare
