@@ -161,3 +161,10 @@ h3 {font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida
 .container{
   background-color: whitesmoke;
 }
+
+.col-xs-4,
+.col-md-4, 
+.col-lg-4,
+.col-md-12 {
+  margin-top:1em;
+}

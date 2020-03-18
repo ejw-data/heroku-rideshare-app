@@ -45,12 +45,12 @@
     </div>
   
     <div class="row row-min">
-      <div class="col-xs-6 col-md-6 col-lg-6 l-pad">   
+      <div class="col-xs-12 col-md-12 col-lg-12 l-pad">   
         {% if message %}
           <p class = "message">{{ message | safe }}</p>
         {% endif %}
         <form action="/submit" method="POST">
-          <div class="form-group">
+          <div class="form-group col-xs-4 col-md-4 col-lg-4">
             <h3>Start Location</h3>
             <input
               id='autocomplete1'
@@ -59,10 +59,10 @@
               placeholder="Enter the Starting Address"
               size=50
               onFocus='geolocate()'
-              
+              class='w-100'
             />
           </div>
-          <div class="form-group">
+          <div class="form-group col-xs-4 col-md-4 col-lg-4 w-100">
             <h3>End Location</h3>
             <input
               id='autocomplete2'
@@ -71,6 +71,7 @@
               placeholder="Enter the Final Address"
               size=50
               onFocus='geolocate()'
+              class='w-100'
             />
           </div>
           <!-- <div class="form-group">
@@ -82,7 +83,9 @@
               size=25
             />
           </div> -->
-          <input type='submit' value="Submit" class="btn btn-primary" />
+          <div class="col-xs-4 col-md-4 col-lg-4 w-100" style="padding-top:3em">
+            <input type='submit' value="Submit" class="btn btn-primary";/>
+          </div>
 
         </form>
         {% if base_fare %}
@@ -92,13 +95,13 @@
         <p class = "estimator">Ride Share Total Cost: ${{ total_cost | safe }}</p>
         {% endif %}
       </div>
-      <div class="col-xs-6 col-md-6 col-lg-6 l-pad"> 
-        <div id = 'map' style="width: 100%;"></div>
+      <div class="col-xs-12 col-md-12 col-lg-12 l-pad "> 
+        <div id = 'map' class="embed-responsive embed-responsive-16by9" style="width: 100%; height:500px"></div>
       </div>
     </div>
     <div class ="row">
       <div class="col-xs-12 col-md-12 col-lg-12">   
-        <a href="/visual" class="btn btn-primary btn-lg" role="button" aria-disabled="true">View Chicago Ride Visualizations</a>
+        <a href="/visual" class="btn btn-primary btn-lg" style="margin-top: 1em;" role="button" aria-disabled="true">View Chicago Ride Visualizations</a>
       </div>
     </div>
     </div>
@@ -106,7 +109,7 @@
 
   <!-- MapQuest JS -->
   <script type="text/javascript" src="../static/js/logic.js"></script> 
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7gzgZv6316f_mvNKTWOV6-AUj_Joo24k&libraries=places&callback=initAutocomplete" async defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key={API_KEY}&libraries=places&callback=initAutocomplete" async defer></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
