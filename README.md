@@ -1,1 +1,6 @@
-# flask-app
+# Rideshare-Flask-App
+#### This project only contains the web interface for an app and does not contain the files used to develop the machine learning algorithm.  The ML algorithm was developed as a separate project and the parameters of the model were stored in a pickle file and called in model.py.
+
+#### This app does not use a database.  The inputs to the machine learning algorithm are pulled from the server time and API calls to mapquest, openweather, and google locations.  These inputs provide estimators for the time, date, start longitude, end longitude, estimated directions with distance and time estimates, and a variety of weather data.  
+
+#### The inputs were also manipulated to determine the taxes applied based on the Chicago tax regions (longitude/latitude calculation).  In a separate repository, a locally run flask app was used as a development version that also includes reverse geocoding to determine community areas and several other factors in the model.  These couple inputs were not included in this Heroku deployment because the overall affect on the model accuracy was minimal and importing in a modified library that would be compatible with Heroku did not seem time effective.  A model with additional features can be found in the development repository (rideshare-local-app, https://github.com/ejw-data/rideshare-local-app.git).   
